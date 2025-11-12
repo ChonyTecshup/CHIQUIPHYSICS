@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChiquiPhysics | ¡Ciencia divertida para niños!</title>
+    <!-- Cargamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cargamos la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Usamos Inter como fuente principal */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Pequeño degradado para el héroe */
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        /* Estilos para la mascota "Chispa" */
+        .mascot-placeholder {
+            /* Usa una imagen local para "Chispa la Alpaca".
+               Coloca tu imagen en: assets/chispa.png (ruta relativa al HTML).
+               Si tu archivo tiene otro nombre, actualiza la URL abajo. */
+            background-image: url('assets/llama.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- ===== Barra de Navegación ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Logo y Nombre -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Icono simple de átomo/chispa -->
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-3xl font-black text-blue-600">ChiquiPhysics</span>
+            </a>
+            
+            <!-- Links de Navegación (para escritorio) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#fisica" class="text-gray-600 hover:text-blue-600 font-semibold text-lg">Física Divertida</a>
+                <a href="#quimica" class="text-gray-600 hover:text-blue-600 font-semibold text-lg">Química Mágica</a>
+                <!-- <a href="#" class="text-gray-600 hover:text-blue-600 font-semibold text-lg">Sobre Nosotros</a> - ELIMINADO -->
+                <a href="#" class="bg-yellow-400 text-yellow-900 font-bold py-2 px-5 rounded-full shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg">
+                    ¡Aprende Ahora!
+                </a>
+            </div>
+            
+            <!-- Botón de Menú (para móvil) -->
+            <div class="md:hidden">
+                <button class="text-gray-700">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Sección Héroe ===== -->
+    <main id="main-content">
+        <section class="hero-gradient pt-16 pb-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+                <!-- Texto del Héroe -->
+                <div class="text-center md:text-left">
+                    <span class="inline-block bg-yellow-200 text-yellow-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">Para mentes curiosas de 5 a 8 años</span>
+                    <h1 class="text-5xl md:text-6xl font-black text-blue-900 mb-6 leading-tight">
+                        ¡Descubre la magia de la ciencia!
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-10">
+                        Aprende física y química con juegos, cuentos y experimentos súper divertidos. ¡Tu aventura comienza aquí!
+                    </p>
+                    <a href="#fisica" class="bg-blue-600 text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-700">
+                        ¡Empezar Aventura!
+                    </a>
+                </div>
+                
+                <!-- Imagen de la Mascota -->
+                <div class="flex justify-center">
+                    <div class="w-80 h-80 md:w-96 md:h-96 mascot-placeholder">
+                        <!-- La imagen de fondo es 'Chispa la Alpaca' -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sección de Cursos Principales ===== -->
+        <section class="py-24 bg-white" id="cursos">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-black text-center text-blue-900 mb-16">
+                    ¿Qué quieres explorar hoy?
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    
+                    <!-- Tarjeta de Física -->
+                    <div id="fisica" class="bg-blue-50 border-4 border-blue-200 rounded-3xl p-8 shadow-xl transition duration-300 hover:shadow-2xl">
+                        <h3 class="text-3xl font-black text-blue-800 mb-6">Física Divertida</h3>
+                        <p class="text-lg text-gray-700 mb-8">Descubre por qué las cosas se mueven, se caen y cómo funcionan los colores.</p>
+                        
+                        <!-- Mini-lecciones -->
+                        <div class="space-y-4">
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="fisica-1">
+                                <span class="flex-shrink-0 bg-blue-100 text-blue-600 rounded-full p-3">
+                                    <!-- Icono de Cohete (Movimiento) -->
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">¿Por qué rueda la pelota?</span>
+                            </a>
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="fisica-2">
+                                <span class="flex-shrink-0 bg-blue-100 text-blue-600 rounded-full p-3">
+                                    <!-- Icono de Manzana (Gravedad) -->
+                                    <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5a1 1 0 112 0v4.586l1.707-1.707a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 9.586V5z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">¿Por qué nos caemos? (Gravedad)</span>
+                            </a>
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="fisica-3">
+                                <span class="flex-shrink-0 bg-blue-100 text-blue-600 rounded-full p-3">
+                                    <!-- Icono de Sol (Luz) -->
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">La magia del arcoíris</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjeta de Química -->
+                    <div id="quimica" class="bg-yellow-50 border-4 border-yellow-200 rounded-3xl p-8 shadow-xl transition duration-300 hover:shadow-2xl">
+                        <h3 class="text-3xl font-black text-yellow-800 mb-6">Química Mágica</h3>
+                        <p class="text-lg text-gray-700 mb-8">¡Vamos a mezclar colores, hacer pociones y descubrir de qué está hecho el mundo!</p>
+                        
+                        <!-- Mini-lecciones -->
+                        <div class="space-y-4">
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="quimica-1">
+                                <span class="flex-shrink-0 bg-yellow-100 text-yellow-600 rounded-full p-3">
+                                    <!-- Icono de Hielo (Materia) -->
+                                    <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">El agua mágica (Estados)</span>
+                            </a>
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="quimica-2">
+                                <span class="flex-shrink-0 bg-yellow-100 text-yellow-600 rounded-full p-3">
+                                    <!-- Icono de Vaso (Mezclas) -->
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.58L4 12l8 8 8-8z"></path></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">¿Qué es una mezcla?</span>
+                            </a>
+                            <a href="#" class="lesson-link flex items-center bg-white p-5 rounded-2xl shadow-md transition transform hover:scale-105 hover:shadow-lg" data-lesson="quimica-3">
+                                <span class="flex-shrink-0 bg-yellow-100 text-yellow-600 rounded-full p-3">
+                                    <!-- Icono de Volcán/Chispa (Reacciones) -->
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343m11.314 11.314a8 8 0 00-11.314-11.314m11.314 11.314L6.343 7.343"></path></svg>
+                                </span>
+                                <span class="ml-4 text-xl font-bold text-gray-800">¡Un volcán que explota!</span>
+                            </a>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Sección de la Mascota ===== -->
+        <section class="bg-blue-600 py-20 text-white overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                    <!-- Imagen de la mascota -->
+                    <div class="flex-shrink-0">
+                         <div class="w-64 h-64 mascot-placeholder transform md:-translate-x-10 -rotate-12">
+                            <!-- La imagen de fondo es 'Chispa la Alpaca' -->
+                        </div>
+                    </div>
+                    
+                    <!-- Texto de la mascota -->
+                    <div class="relative max-w-lg text-center md:text-left">
+                        <!-- Cita/burbuja de diálogo -->
+                        <div class="bg-white text-blue-900 rounded-3xl p-8 shadow-2xl relative">
+                            <!-- Triángulo de la burbuja -->
+                            <div class="absolute left-8 md:-left-4 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white md:border-r-0 md:border-l-8 md:border-l-white"></div>
+                            
+                            <h2 class="text-3xl font-black mb-4">¡Hola, soy Chispa!</h2>
+                            <p class="text-xl font-semibold">
+                                ¡Soy una alpaca súper curiosa! 🦙 Me encanta preguntar "por qué" y "cómo". 
+                                ¡Estoy aquí para explorar contigo el increíble mundo de la ciencia! ¿Estás listo?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Vista de Lección (Oculta por defecto) ===== -->
+    <section id="lesson-view" class="hidden min-h-screen bg-gray-100 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Botón de Volver -->
+            <button id="back-button" class="mb-8 flex items-center text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                Volver a todos los cursos
+            </button>
+            
+            <!-- Contenido de la Lección -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                <!-- Título -->
+                <h1 id="lesson-title" class="text-4xl md:text-5xl font-black text-blue-900 mb-8">
+                    Título de la Lección
+                </h1>
+                
+                <!-- Video -->
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">¡Mira el Video!</h2>
+                <div id="lesson-video" class="aspect-w-16 aspect-h-9 mb-10">
+                    <!-- El video se cargará aquí vía JavaScript -->
+                </div>
+
+                <!-- Juego Interactivo - ELIMINADO -->
+                
+                <!-- Texto Explicativo -->
+                <div id="lesson-text" class="mt-10 text-lg text-gray-700 space-y-4">
+                    <p>Aquí irá la explicación de la lección, con palabras sencillas y ejemplos divertidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-blue-900 text-blue-200 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Logo y Misión -->
+                <div>
+                    <h4 class="text-2xl font-bold text-white mb-3">ChiquiPhysics</h4>
+                    <p class="text-sm">Ciencia gratuita y divertida para todos los niños del Perú.</p>
+                </div>
+                
+                <!-- Cursos -->
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">Cursos</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#fisica" class="hover:text-white">Física Divertida</a></li>
+                        <li><a href="#quimica" class="hover:text-white">Química Mágica</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Nosotros - ELIMINADO -->
+                
+                <!-- Legal - ELIMINADO (Soporte) -->
+                
+            </div>
+            
+            <!-- Línea divisoria y copyright -->
+            <hr class="border-blue-700 my-8">
+            <p class="text-center text-sm text-blue-300">
+                Hecho con ❤️ en Perú | &copy; 2025 ChiquiPhysics. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JavaScript para la Navegación ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Contenido de ejemplo para las lecciones
+            // En un futuro, esto podría venir de una base de datos
+            const lessonData = {
+                'fisica-1': {
+                    title: '¿Por qué rueda la pelota?',
+                    videoUrl: 'https://www.youtube.com/watch?v=BwpvOr7OyrU%27', // <-- Link de tu captura
+                    text: '<p>¡Hola! ¿Alguna vez te has preguntado por qué una pelota rueda? Es por algo llamado <strong>"fuerza"</strong>. Cuando empujas la pelota (¡eso es una fuerza!), empieza a moverse. Y como es redonda, ¡rueda y rueda!</p><p>Intenta empujar un cubo. ¿Rueda? ¡No! Se desliza. La forma redonda es especial para rodar.</p>'
+                },
+                'fisica-2': {
+                    title: '¿Por qué nos caemos? (Gravedad)',
+                    videoUrl: 'https://www.youtube.com/watch?v=xeYhaXwoTw4%27', // <-- Link de tu captura
+                    text: '<p>¿Saltas? ¡Vuelves a caer! ¿Lanzas una pelota al aire? ¡Regresa! Eso es gracias a la <strong>gravedad</strong>.</p><p>La gravedad es como un imán gigante invisible que tiene nuestro planeta, la Tierra. Nos jala a todos hacia el centro para que no salgamos flotando al espacio. ¡Gracias, gravedad!</p>'
+                },
+                'fisica-3': {
+                    title: 'La magia del arcoíris',
+                    videoUrl: 'https://www.youtube.com/watch?v=w-CJb77BTA0%27', // <-- Link de tu captura
+                    text: '<p>El sol nos da luz blanca, pero ¿sabías que esa luz está hecha de muchos colores? ¡Como un arcoíris escondido!</p><p>Cuando llueve y sale el sol, la luz pasa a través de las gotitas de agua. Esas gotitas actúan como espejos pequeñitos que separan la luz en todos sus colores: rojo, naranja, amarillo, verde, azul, añil y violeta. ¡Y así nace el arcoíris!</p>'
+                },
+                'quimica-1': {
+                    title: 'El agua mágica (Estados)',
+                    videoUrl: 'https://www.youtube.com/watch?v=fxDKpEYAoSE%27', // <-- Link de tu captura
+                    text: '<p>¡El agua es una súper maga! ¿Sabías que puede transformarse?</p><p>💧 Es <strong>LÍQUIDA</strong> cuando la bebes de tu vaso.</p><p>🧊 Si la pones en el congelador, ¡se convierte en <strong>SÓLIDO</strong>! (¡Cubitos de hielo!)</p><p>☁️ Y si un adulto calienta agua en la tetera, ¡sale vapor! Ese vapor es agua en forma de <strong>GAS</strong>. ¡Increíble!</p>'
+                },
+                'quimica-2': {
+                    title: '¿Qué es una mezcla?',
+                    videoUrl: 'https://www.youtube.com/watch?v=2FPaXer7AN0%27', // <-- Link de tu captura
+                    text: '<p>¿Alguna vez has guardado tus juguetes? ¡Imagina una caja con bloques, carritos y pelotas! Todo eso junto es una <strong>mezcla</strong>.</p><p>Una mezcla es cuando juntas varias cosas y puedes seguir viendo cada parte. Como en una ensalada de frutas: ¡todavía puedes ver la fresa, el plátano y la manzana! 🍓🍌🍎</p>'
+                },
+                'quimica-3': {
+                    title: '¡Un volcán que explota!',
+                    videoUrl: 'https://www.youtube.com/watch?v=_XI8SCKs2N4%27', // <-- Link de tu captura
+                    text: '<p>¿Quieres hacer magia? Mezcla bicarbonato de sodio (pídele a un adulto) con vinagre. ¡Fshhhhhh! ¡Hará muchas burbujas! Eso es una <strong>reacción química</strong>.</p><p>A diferencia de la limonada, aquí las cosas sí se transforman. El bicarbonato y el vinagre se convierten en algo nuevo: ¡un gas (dióxido de carbono) que crea todas esas burbujas divertidas!</p>'
+                }
+            };
+
+            // Elementos de la UI
+            const mainContent = document.getElementById('main-content');
+            const lessonView = document.getElementById('lesson-view');
+            const backButton = document.getElementById('back-button');
+            const lessonLinks = document.querySelectorAll('.lesson-link');
+
+            // Elementos de la lección
+            const lessonTitle = document.getElementById('lesson-title');
+            const lessonVideo = document.getElementById('lesson-video');
+            const lessonText = document.getElementById('lesson-text');
+
+            // Función para mostrar una lección
+            function showLesson(lessonId) {
+                const data = lessonData[lessonId];
+                if (!data) return; // Si no hay datos, no hacer nada
+
+                // Actualizar contenido de la lección
+                lessonTitle.textContent = data.title;
+                lessonText.innerHTML = data.text;
+                
+                // --- Lógica actualizada para insertar el video ---
+                let videoEmbedHtml = '';
+                if (data.videoUrl && data.videoUrl.includes('youtube.com')) {
+                    // Si es un video de YouTube, crea un iframe
+                    videoEmbedHtml = `
+                        <iframe class="w-full h-full rounded-2xl" 
+                                src="${data.videoUrl}" 
+                                title="Video de la lección: ${data.title}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    `;
+                } else if (data.videoUrl) {
+                    // Si no es de YouTube pero existe, usa el placeholder (lógica anterior)
+                    videoEmbedHtml = `
+                        <div class="w-full h-full bg-black rounded-2xl flex items-center justify-center text-white font-bold text-2xl bg-cover bg-center" style="background-image: url('${data.videoUrl}')">
+                            <!-- <span>Video: ${data.title}</span> -->
+                        </div>
+                    `;
+                } else {
+                    // Si no hay videoUrl, muestra un mensaje
+                     videoEmbedHtml = `
+                        <div class="w-full h-full bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 font-bold text-2xl">
+                            <span>Video no disponible</span>
+                        </div>
+                    `;
+                }
+                
+                lessonVideo.innerHTML = videoEmbedHtml;
+                // --- Fin de la lógica actualizada ---
+                
+                // Actualizar juego (placeholder) - ELIMINADO
+
+                // Ocultar página principal y mostrar lección
+                mainContent.classList.add('hidden');
+                lessonView.classList.remove('hidden');
+                window.scrollTo(0, 0); // Subir al inicio de la página
+            }
+
+            // Función para volver a la página principal
+            function showHome() {
+                lessonView.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+            }
+
+            // Asignar eventos a todos los enlaces de lección
+            lessonLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Evitar que el enlace cambie la URL
+                    const lessonId = link.dataset.lesson; // Obtener el ID de la lección del atributo data-lesson
+                    showLesson(lessonId);
+                });
+            });
+
+            // Asignar evento al botón de "Volver"
+            backButton.addEventListener('click', showHome);
+        });
+    </script>
+
+</body>
+</html>
